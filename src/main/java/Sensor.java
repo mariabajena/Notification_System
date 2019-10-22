@@ -1,2 +1,3 @@
-public class Sensor {
+public interface Sensor {
+    int getValue();
 }

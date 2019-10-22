@@ -1,2 +1,3 @@
-public class Actuator {
+public interface Actuator {
+    void doAction();
 }
