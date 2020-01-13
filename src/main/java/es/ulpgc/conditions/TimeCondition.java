@@ -1,6 +1,5 @@
 package es.ulpgc.conditions;
 
-
 import es.ulpgc.sensors.Clock;
 import es.ulpgc.sensors.Sensor;
 

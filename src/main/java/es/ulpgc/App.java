@@ -10,7 +10,6 @@ import es.ulpgc.rules.Rule;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class App {
 
@@ -29,8 +28,7 @@ public class App {
         String hour = "16:42"; //HH:MM
         int day = 2; // 1=Sunday, ..., 7
 
-        List<Condition> conditions = new ArrayList<Condition>() {
-        };
+        List<Condition> conditions = new ArrayList<>();
         conditions.add(new TimeCondition(hour));
         conditions.add(new WeekDayCondition(day));
 

@@ -1,11 +1,11 @@
 package es.ulpgc.actuarors;
 
-import es.ulpgc.rules.Rule;
+import es.ulpgc.rules.ConcreteRule;
 
 public class ScreenNotificationActuator implements Actuator {
 
     @Override
-    public void doAction(Rule concreteRule) {
-        System.out.println("It's time! " + concreteRule.getRuleName() + "'s conditions are true!");
+    public void doAction(Object obj) {
+        System.out.println("It's time! " + ((ConcreteRule) obj).getRuleName() + "'s conditions are true!");
     }
 }

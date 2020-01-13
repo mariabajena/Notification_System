@@ -2,7 +2,6 @@ package es.ulpgc.account;
 
 
 import es.ulpgc.rules.Rule;
-
 import java.util.ArrayList;
 import java.util.List;
 
