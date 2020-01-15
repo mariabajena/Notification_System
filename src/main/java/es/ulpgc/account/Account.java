@@ -2,13 +2,13 @@ package es.ulpgc.account;
 
 
 import es.ulpgc.rules.Rule;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Account {
     private String login;
     private String password;
-    List<Rule> rules;
+    ArrayList<Rule> rules;
 
     public Account(String login) {
         this.login = login;
@@ -31,7 +31,20 @@ public class Account {
         rules.add(rule);
     }
 
-    public void rulesON() {
-        rules.forEach(Rule::work);
+    public void rulesActivate() {
+        rules.forEach(Rule::activate);
+    }
+
+    public void rulesDeactivate() {
+        rules.forEach(Rule::deactivate);
+    }
+
+    @Override
+    public String toString() {
+        return login;
+    }
+
+    public ArrayList<Rule> getRules() {
+        return rules;
     }
 }
