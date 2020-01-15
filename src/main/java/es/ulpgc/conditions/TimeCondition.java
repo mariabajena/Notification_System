@@ -14,7 +14,7 @@ public class TimeCondition implements Condition {
 
     @Override
     public boolean isTrue() {
-        return this.sensor.getValue().equals(threshold);
+        return this.sensor.getValue().equals(threshold); //equals compares HH:MM with HH:MM
     }
 
     public Sensor getSensor() {
@@ -24,4 +24,5 @@ public class TimeCondition implements Condition {
     public Object getThreshold() {
         return threshold;
     }
+
 }
