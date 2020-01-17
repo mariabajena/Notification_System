@@ -1,4 +1,4 @@
-package es.ulpgc.actuarors;
+package es.ulpgc.actuators;
 
 import javax.swing.*;
 
@@ -8,6 +8,6 @@ public class SwingNotificationActuator implements Actuator {
 
     @Override
     public void doAction(Object obj) {
-        JOptionPane.showMessageDialog(parentComponent, "It's time! " + (String) obj + "'s conditions are true!", "Alert", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(parentComponent, "It's time! " + obj + "'s conditions are true!", "Alert", JOptionPane.INFORMATION_MESSAGE);
     }
 }

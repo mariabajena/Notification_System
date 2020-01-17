@@ -2,7 +2,7 @@
 package es.ulpgc;
 
 import es.ulpgc.account.Account;
-import es.ulpgc.actuarors.SwingNotificationActuator;
+import es.ulpgc.actuators.SwingNotificationActuator;
 import es.ulpgc.rules.WeeklyTimeRule;
 import es.ulpgc.userinterface.BasicUserInterface;
 

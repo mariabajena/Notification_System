@@ -1,7 +1,7 @@
 package es.ulpgc.rules;
 
-import es.ulpgc.actuarors.Actuator;
-import es.ulpgc.actuarors.SwingNotificationActuator;
+import es.ulpgc.actuators.Actuator;
+import es.ulpgc.actuators.SwingNotificationActuator;
 import es.ulpgc.conditions.Condition;
 import es.ulpgc.conditions.TimeCondition;
 import es.ulpgc.conditions.WeekDayCondition;
@@ -68,7 +68,14 @@ public class WeeklyTimeRule implements Rule {
         return "  " + ruleName + " (" + new DateFormatSymbols().getWeekdays()[weekday] + " at " + time + ")";
     }
 
+    @Override
+    public Boolean isActive(){
+        return active;
+    }
+
     public String getRuleName() {
         return ruleName;
     }
+    public List<Condition> getConditions() { return conditions; }
+    public Actuator getActuator() { return actuator; }
 }

@@ -1,7 +1,6 @@
 package es.ulpgc.userinterface;
 
 import es.ulpgc.account.Account;
-import es.ulpgc.actuarors.SwingNotificationActuator;
 
 import javax.swing.*;
 import java.awt.*;
