@@ -40,6 +40,4 @@ public class BasicUserAccount extends JFrame {
             }
         });
     }
-
-
 }

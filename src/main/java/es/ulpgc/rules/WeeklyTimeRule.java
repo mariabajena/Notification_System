@@ -33,9 +33,9 @@ public class WeeklyTimeRule implements Rule {
         deactivate();
     }
 
-    /**
-     * Check if the conditions are true every second (1000 milliseconds). When triggered, stop checking for 60 units.
-     */
+    // *
+    // * Check if the conditions are true every second (1000 milliseconds). When triggered, stop checking for 60 units.
+    // *
     public void initialize() {
         int delay = 1000; //milliseconds
         ActionListener checkRulesListener = new ActionListener() {
@@ -76,6 +76,12 @@ public class WeeklyTimeRule implements Rule {
     public String getRuleName() {
         return ruleName;
     }
-    public List<Condition> getConditions() { return conditions; }
-    public Actuator getActuator() { return actuator; }
+
+    public List<Condition> getConditions() {
+        return conditions;
+    }
+
+    public Actuator getActuator() {
+        return actuator;
+    }
 }

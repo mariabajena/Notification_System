@@ -2,6 +2,7 @@ package es.ulpgc.userinterface;
 
 import es.ulpgc.account.Account;
 import es.ulpgc.rules.Rule;
+
 import org.junit.Before;
 import org.junit.Test;
 

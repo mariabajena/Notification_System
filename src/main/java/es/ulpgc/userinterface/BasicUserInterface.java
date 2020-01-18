@@ -51,6 +51,4 @@ public class BasicUserInterface extends JFrame {
         users.stream().forEach(usersComboBox::addItem);
         this.repaint();
     }
-
-
 }

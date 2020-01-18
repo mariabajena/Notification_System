@@ -1,4 +1,3 @@
-
 package es.ulpgc;
 
 import es.ulpgc.account.Account;
@@ -25,5 +24,4 @@ public class App {
 
         frame.updateUsers(users);
     }
-
 }

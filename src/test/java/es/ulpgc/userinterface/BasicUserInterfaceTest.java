@@ -1,13 +1,13 @@
 package es.ulpgc.userinterface;
 
 import es.ulpgc.account.Account;
-import es.ulpgc.rules.WeeklyTimeRule;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
 public class BasicUserInterfaceTest {
@@ -17,6 +17,7 @@ public class BasicUserInterfaceTest {
     public void setUp(){
         this.bui = new BasicUserInterface();
     }
+
     @Test
     public void usersUpdatedShouldAnswerWithTrue() {
         ArrayList<Account> users = new ArrayList<>();

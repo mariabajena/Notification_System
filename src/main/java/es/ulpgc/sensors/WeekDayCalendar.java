@@ -9,5 +9,4 @@ public class WeekDayCalendar implements Sensor {
         Calendar cal = Calendar.getInstance();
         return cal.get(Calendar.DAY_OF_WEEK);
     }
-
 }
