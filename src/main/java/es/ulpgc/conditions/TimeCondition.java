@@ -24,5 +24,4 @@ public class TimeCondition implements Condition {
     public Object getThreshold() {
         return threshold;
     }
-
 }

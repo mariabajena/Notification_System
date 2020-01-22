@@ -6,10 +6,10 @@ import org.junit.Test;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertTrue;
 
 public class WeeklyTimeRuleTest {
+
     @Test
     public void ruleConditionListWorkingShouldAnswerWithTrue() {
         Calendar cal = Calendar.getInstance();

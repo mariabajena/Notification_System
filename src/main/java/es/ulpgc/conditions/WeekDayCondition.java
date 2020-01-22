@@ -1,6 +1,5 @@
 package es.ulpgc.conditions;
 
-
 import es.ulpgc.sensors.Sensor;
 import es.ulpgc.sensors.WeekDayCalendar;
 
@@ -26,5 +25,4 @@ public class WeekDayCondition implements Condition {
     public Sensor getSensor() {
         return sensor;
     }
-
 }

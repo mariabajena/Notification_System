@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormatSymbols;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class WeeklyTimeRule implements Rule {
@@ -36,16 +37,21 @@ public class WeeklyTimeRule implements Rule {
         deactivate();
     }
 
-    /**
-     * Check if the conditions are true every second (1000 milliseconds). When triggered, stop checking for 60 units.
-     */
+    // *
+    // * Check if the conditions are true every second (1000 milliseconds). When triggered, stop checking for 60 units.
+    // *
     public void initialize() {
         int delay = 1000; //milliseconds
         ActionListener checkRulesListener = new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 if (triggeredDelay == 0) {
                     if (conditions.stream().allMatch(Condition::isTrue)) {
-                        actuators.forEach((actuator) -> actuator.doAction(ruleName, time, weekday));
+                        List<Object> parameters = new ArrayList<>();
+                        parameters.add(ruleName);
+                        parameters.add(time);
+                        parameters.add(weekday);
+                        actuators.get(0).doAction(parameters);
+                        actuators.get(1).doAction(parameters);
                         triggeredDelay = 60;
                     }
                 } else triggeredDelay--;
@@ -79,5 +85,8 @@ public class WeeklyTimeRule implements Rule {
     public String getRuleName() {
         return ruleName;
     }
-    public List<Condition> getConditions() { return conditions; }
+
+    public List<Condition> getConditions() {
+        return conditions;
+    }
 }

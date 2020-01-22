@@ -1,13 +1,11 @@
 package es.ulpgc.conditions;
 
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.*;
-
-import es.ulpgc.sensors.Clock;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import static org.junit.Assert.assertTrue;
 
 public class TimeConditionTest {
 
@@ -21,5 +19,4 @@ public class TimeConditionTest {
 
         assertTrue(condition.isTrue());
     }
-
 }
