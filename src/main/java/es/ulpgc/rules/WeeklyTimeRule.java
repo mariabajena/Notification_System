@@ -1,6 +1,7 @@
 package es.ulpgc.rules;
 
 import es.ulpgc.actuators.Actuator;
+import es.ulpgc.actuators.ConsoleNotificationActuator;
 import es.ulpgc.actuators.SwingNotificationActuator;
 import es.ulpgc.conditions.Condition;
 import es.ulpgc.conditions.TimeCondition;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class WeeklyTimeRule implements Rule {
     private static String ruleName = "Weekly time";
-    private Actuator actuator = new SwingNotificationActuator();
+    private List<Actuator> actuators = new ArrayList<>();
     private List<Condition> conditions = new ArrayList<>();
     boolean active;
     private Timer timer;
@@ -29,6 +30,8 @@ public class WeeklyTimeRule implements Rule {
         this.active = active;
         conditions.add(new TimeCondition(time));
         conditions.add(new WeekDayCondition(weekday));
+        actuators.add(new SwingNotificationActuator());
+        actuators.add(new ConsoleNotificationActuator());
         initialize();
         deactivate();
     }
@@ -42,7 +45,7 @@ public class WeeklyTimeRule implements Rule {
             public void actionPerformed(ActionEvent evt) {
                 if (triggeredDelay == 0) {
                     if (conditions.stream().allMatch(Condition::isTrue)) {
-                        actuator.doAction(ruleName);
+                        actuators.forEach((actuator) -> actuator.doAction(ruleName, time, weekday));
                         triggeredDelay = 60;
                     }
                 } else triggeredDelay--;
@@ -77,5 +80,4 @@ public class WeeklyTimeRule implements Rule {
         return ruleName;
     }
     public List<Condition> getConditions() { return conditions; }
-    public Actuator getActuator() { return actuator; }
 }

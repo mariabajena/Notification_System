@@ -16,7 +16,8 @@ public class App {
         ArrayList<Account> users = new ArrayList<>();
 
         Account u1 = new Account("JaneSmith");
-        u1.addRule(new WeeklyTimeRule("21:57", 4, true));
+        u1.addRule(new WeeklyTimeRule("16:25", 4, true));
+        u1.addRule(new WeeklyTimeRule("16:26", 4, true));
         users.add(u1);
 
         Account u2 = new Account("TomJones");
